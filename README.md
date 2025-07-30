@@ -1,22 +1,24 @@
 # CV Diego Cruz - Desarrollador Mobile & Full Stack
 
-[![Deploy to GitHub Pages](https://github.com/OrzeFox/cv-diego-cruz/workflows/Deploy%20CV%20to%20GitHub%20Pages/badge.svg)](https://github.com/OrzeFox/cv-diego-cruz/actions)
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://orzeFox.github.io/cv-diego-cruz)
+[![Deploy to GitHub Pages](https://github.com/OrzeFox/CV-Diego/workflows/Deploy%20CV%20to%20GitHub%20Pages/badge.svg)](https://github.com/OrzeFox/CV-Diego/actions)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://orzeFox.github.io/CV-Diego)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌐 **CV Online**
 
-**Visita mi CV en vivo:** [https://orzeFox.github.io/cv-diego-cruz](https://orzeFox.github.io/cv-diego-cruz)
+**Visita mi CV en vivo:** [https://orzeFox.github.io/CV-Diego](https://orzeFox.github.io/CV-Diego)
 
 ## 📁 Estructura del Repositorio
 
 ```
 CV_Diego_Cruz/
-├── index.html              # Archivo HTML principal
-├── styles.css              # Estilos CSS separados
+├── index.html              # CV en español
+├── index-en.html           # CV en inglés
+├── styles.css              # Estilos CSS minimalistas
 ├── package.json            # Configuración del proyecto
 ├── scripts/
-│   └── generate-pdf.js     # Script para generar PDF
+│   ├── generate-pdf.js     # Generador PDF español
+│   └── generate-pdf-en.js  # Generador PDF inglés
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml      # GitHub Actions para despliegue
@@ -29,43 +31,52 @@ CV_Diego_Cruz/
 Este repositorio utiliza **GitHub Actions** para:
 
 - ✅ **Despliegue automático** a GitHub Pages
-- ✅ **Generación automática** de PDF
+- ✅ **Generación automática** de PDFs (ES/EN)
 - ✅ **Actualización en tiempo real** al hacer push
+- ✅ **Optimización de rendimiento** automática
 
 ### **Flujo de Trabajo:**
 
 1. **Push a `main`** → GitHub Actions se ejecuta automáticamente
 2. **Despliegue** → CV se publica en GitHub Pages
-3. **PDF** → Se genera automáticamente como artifact
+3. **PDFs** → Se generan automáticamente ambos idiomas
 
 ## 🎨 Características del Diseño
 
-### **Mejoras Implementadas:**
+### **✨ Nuevas Mejoras Implementadas:**
 
-- ✅ **CSS separado** para fácil mantenimiento
+- ✅ **Diseño minimalista** y profesional
+- ✅ **Versión bilingüe** (Español/Inglés)
+- ✅ **Sección de IA** para herramientas de desarrollo
+- ✅ **CSS optimizado** para mejor rendimiento
 - ✅ **Diseño responsive** que se adapta a todos los dispositivos
-- ✅ **Animaciones suaves** con efectos hover
-- ✅ **Gradientes modernos** y efectos visuales
+- ✅ **Generación de PDF** mejorada y estable
 - ✅ **Tipografía profesional** y legible
 - ✅ **Optimizado para impresión** (PDF)
-- ✅ **Modo oscuro** automático (si el sistema lo prefiere)
 - ✅ **Accesibilidad mejorada** con soporte para preferencias de movimiento reducido
 
-### **Efectos Visuales:**
+### **🎯 Sección de IA para Desarrollo:**
 
-- **Animación de entrada** suave al cargar la página
-- **Efectos hover** en elementos interactivos
-- **Transiciones** fluidas entre estados
-- **Gradientes** profesionales en header y elementos
-- **Sombras** sutiles para profundidad
+- **GitHub Copilot** - Autocompletado inteligente
+- **ChatGPT** - Debugging asistido
+- **Cursor AI** - Desarrollo asistido por IA
+- **Generación automática** de documentación y tests
+- **Optimización de workflows** de desarrollo
+
+### **📱 Responsive Design:**
+
+- **Desktop:** Layout optimizado con grid flexible
+- **Tablet:** Adaptación automática de columnas
+- **Mobile:** Diseño compacto y legible
+- **Impresión:** Optimizado para PDF sin efectos
 
 ## 🛠️ **Desarrollo Local**
 
 ### **1. Clonar el repositorio:**
 
 ```bash
-git clone https://github.com/OrzeFox/cv-diego-cruz.git
-cd cv-diego-cruz
+git clone https://github.com/OrzeFox/CV-Diego.git
+cd CV-Diego
 ```
 
 ### **2. Instalar dependencias:**
@@ -82,10 +93,12 @@ npm start
 npm run dev
 ```
 
-### **4. Generar PDF localmente:**
+### **4. Generar PDFs:**
 
 ```bash
-npm run pdf
+npm run pdf        # PDF en español
+npm run pdf:en     # PDF en inglés
+npm run pdf:all    # Ambos PDFs
 ```
 
 ## 🚀 **Scripts Disponibles**
@@ -95,10 +108,27 @@ npm start          # Iniciar servidor de desarrollo
 npm run dev        # Modo desarrollo
 npm run build      # Preparar para producción
 npm run deploy     # Desplegar a GitHub Pages
-npm run pdf        # Generar PDF del CV
+npm run pdf        # Generar PDF en español
+npm run pdf:en     # Generar PDF en inglés
+npm run pdf:all    # Generar ambos PDFs
 npm run lint       # Verificar código
 npm run test       # Probar accesibilidad
 ```
+
+## 🌍 **Versiones Disponibles**
+
+### **📄 CV en Español:**
+- **Archivo:** `index.html`
+- **PDF:** `CV_Diego_Cruz.pdf`
+- **Script:** `npm run pdf`
+
+### **📄 CV en Inglés:**
+- **Archivo:** `index-en.html`
+- **PDF:** `CV_Diego_Cruz_EN.pdf`
+- **Script:** `npm run pdf:en`
+
+### **📄 Ambos PDFs:**
+- **Script:** `npm run pdf:all`
 
 ## 🎯 **Personalización**
 
@@ -108,17 +138,17 @@ En `styles.css`, busca y modifica:
 
 ```css
 /* Colores principales */
---primary-color: #667eea;
---secondary-color: #764ba2;
+--primary-color: #2c3e50;
+--secondary-color: #3498db;
 --text-color: #333;
---background-color: #f8f9fa;
+--background-color: #f5f5f5;
 ```
 
 ### **Agregar Secciones:**
 
 1. Copiar estructura de sección existente en `index.html`
 2. Agregar estilos correspondientes en `styles.css`
-3. Mantener consistencia con el diseño actual
+3. Mantener consistencia con el diseño minimalista
 
 ### **Modificar Animaciones:**
 
@@ -131,32 +161,37 @@ transition: all 0.3s ease; /* Cambiar 0.3s por el tiempo deseado */
 
 El CV se adapta automáticamente a:
 
-- **Desktop:** Ancho completo con grid de 3 columnas
-- **Tablet:** Grid de 2 columnas, padding reducido
+- **Desktop:** Ancho completo con grid optimizado
+- **Tablet:** Grid adaptativo, padding reducido
 - **Mobile:** Una columna, elementos apilados
 - **Impresión:** Optimizado para PDF sin efectos hover
 
-## 🎨 **Temas Disponibles**
+## 🎨 **Diseño Minimalista**
 
-### **Tema Claro (Por defecto):**
+### **Características del Nuevo Diseño:**
 
-- Fondo claro con gradiente sutil
-- Texto oscuro para máxima legibilidad
-- Colores profesionales azul/púrpura
+- **Paleta de colores simplificada** - Azul oscuro y claro
+- **Tipografía limpia** - Sin efectos visuales excesivos
+- **Espaciado optimizado** - Mejor densidad de información
+- **Bordes sutiles** - 3px en lugar de 5px
+- **Sin animaciones complejas** - Diseño estático y profesional
+- **Sombras mínimas** - Efectos visuales sutiles
 
-### **Tema Oscuro (Automático):**
+### **Ventajas del Diseño Minimalista:**
 
-- Se activa si el sistema prefiere modo oscuro
-- Fondo oscuro con texto claro
-- Mantiene la misma estructura visual
+- ✅ **Mejor legibilidad** en todos los dispositivos
+- ✅ **Carga más rápida** sin efectos pesados
+- ✅ **Aspecto más profesional** y serio
+- ✅ **Mejor para impresión** y PDF
+- ✅ **Más accesible** para lectores de pantalla
 
 ## 🔧 **Optimizaciones Técnicas**
 
 ### **Rendimiento:**
 
-- CSS optimizado y minificado
-- Animaciones con `transform` para mejor rendimiento
-- Lazy loading de efectos visuales
+- CSS optimizado y minimalista
+- Sin animaciones complejas para mejor rendimiento
+- Generación de PDF estable y confiable
 
 ### **Accesibilidad:**
 
@@ -167,30 +202,31 @@ El CV se adapta automáticamente a:
 
 ### **SEO:**
 
-- Meta tags optimizados
+- Meta tags optimizados para ambos idiomas
 - Estructura semántica HTML5
 - Palabras clave relevantes
 
 ## 📋 **Checklist de Personalización**
 
-- [ ] **Información de contacto** actualizada
-- [ ] **Experiencia laboral** con métricas específicas
-- [ ] **Proyectos** con enlaces a GitHub
-- [ ] **Certificaciones** agregadas
-- [ ] **Idiomas** con niveles específicos
-- [ ] **Intereses** relevantes para la industria
-- [ ] **Fecha de actualización** del CV
-- [ ] **Portfolio** enlazado (cuando esté listo)
+- [x] **Información de contacto** actualizada
+- [x] **Experiencia laboral** con métricas específicas
+- [x] **Proyectos** con descripciones detalladas
+- [x] **Sección de IA** para herramientas de desarrollo
+- [x] **Idiomas** con niveles específicos
+- [x] **Intereses** relevantes para la industria
+- [x] **Fecha de actualización** del CV
+- [x] **Versión bilingüe** completa
 
 ## 🔄 **Actualización del CV**
 
 ### **Proceso de Actualización:**
 
-1. **Editar archivos** localmente
+1. **Editar archivos** localmente (`index.html` e `index-en.html`)
 2. **Probar cambios** con `npm start`
-3. **Commit y push** a GitHub
-4. **GitHub Actions** despliega automáticamente
-5. **CV actualizado** en GitHub Pages
+3. **Generar PDFs** con `npm run pdf:all`
+4. **Commit y push** a GitHub
+5. **GitHub Actions** despliega automáticamente
+6. **CV actualizado** en GitHub Pages
 
 ### **Comandos útiles:**
 
@@ -210,7 +246,7 @@ git push origin main
 
 ## 🎯 **Próximos Pasos**
 
-1. **Completar información faltante** marcada con `[Agregar...]`
+1. **Configurar GitHub Pages** para tener el CV online
 2. **Personalizar colores** si deseas otro esquema
 3. **Agregar foto** si es apropiado para tu industria
 4. **Crear múltiples versiones** para diferentes tipos de posiciones
@@ -223,6 +259,7 @@ git push origin main
 - **Incluye palabras clave** de las ofertas de trabajo
 - **Pide feedback** a colegas o mentores
 - **Prueba diferentes formatos** según la empresa
+- **Usa la versión en inglés** para oportunidades internacionales
 
 ## 📄 **Licencia**
 
@@ -234,6 +271,6 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o pull request para
 
 ---
 
-**¡Tu CV profesional está listo para impresionar! 🚀**
+**¡Tu CV profesional bilingüe está listo para impresionar! 🚀**
 
-**Visita:** [https://orzeFox.github.io/cv-diego-cruz](https://orzeFox.github.io/cv-diego-cruz)
+**Visita:** [https://orzeFox.github.io/CV-Diego](https://orzeFox.github.io/CV-Diego)
