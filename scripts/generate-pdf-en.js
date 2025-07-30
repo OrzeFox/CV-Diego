@@ -5,11 +5,13 @@ const path = require('path');
 const fs = require('fs');
 
 async function generatePDF() {
-  console.log('🔄 Generando PDF del CV...');
+  console.log('🔄 Generating English CV PDF...');
 
   let browser;
   try {
+    // Use the stable configuration that works on macOS
     browser = await puppeteer.launch({
+      headless: true, // Use old headless mode for better compatibility
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -30,10 +32,10 @@ async function generatePDF() {
     });
 
     // Obtener la ruta absoluta del archivo HTML
-    const htmlPath = path.join(__dirname, '..', 'index.html');
+    const htmlPath = path.join(__dirname, '..', 'index-en.html');
     const fileUrl = `file://${htmlPath}`;
 
-    console.log(`📄 Cargando archivo: ${fileUrl}`);
+    console.log(`📄 Loading file: ${fileUrl}`);
 
     // Navigate to the page
     await page.goto(fileUrl, {
@@ -65,7 +67,7 @@ async function generatePDF() {
 
     // Configuración del PDF
     const pdfOptions = {
-      path: path.join(__dirname, '..', 'CV_Diego_Cruz.pdf'),
+      path: path.join(__dirname, '..', 'CV_Diego_Cruz_EN.pdf'),
       format: 'A4',
       margin: {
         top: '1cm',
@@ -78,24 +80,24 @@ async function generatePDF() {
       preferCSSPageSize: false,
     };
 
-    console.log('📝 Generando PDF...');
+    console.log('📝 Generating PDF...');
     await page.pdf(pdfOptions);
 
     const pdfPath = pdfOptions.path;
     const stats = fs.statSync(pdfPath);
     const fileSizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
 
-    console.log(`✅ PDF generado exitosamente: ${pdfPath}`);
-    console.log(`📊 Tamaño del archivo: ${fileSizeInMB} MB`);
+    console.log(`✅ PDF generated successfully: ${pdfPath}`);
+    console.log(`📊 File size: ${fileSizeInMB} MB`);
 
     // Verify PDF was created and has content
     if (stats.size < 1000) {
       console.warn(
-        '⚠️  El PDF generado parece ser muy pequeño, puede haber un problema con el contenido'
+        '⚠️  The generated PDF seems very small, there might be a content issue'
       );
     }
   } catch (error) {
-    console.error('❌ Error generando PDF:', error.message);
+    console.error('❌ Error generating PDF:', error.message);
     console.error('Stack trace:', error.stack);
     process.exit(1);
   } finally {
