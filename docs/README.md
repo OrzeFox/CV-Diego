@@ -39,5 +39,6 @@ This repository is configured to automatically deploy to GitHub Pages using the 
 ### **PDF Artifacts:**
 
 After each deployment, PDF files are available as artifacts:
+
 - `CV_Diego_Cruz.pdf` - Spanish version
-- `CV_Diego_Cruz_EN.pdf` - English version 
+- `CV_Diego_Cruz_EN.pdf` - English version

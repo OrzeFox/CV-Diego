@@ -10,4 +10,4 @@ static_files:
   - .nojekyll
 
 # Disable Jekyll processing
-jekyll: false 
+jekyll: false
