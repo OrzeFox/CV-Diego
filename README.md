@@ -118,16 +118,19 @@ npm run test       # Probar accesibilidad
 ## 🌍 **Versiones Disponibles**
 
 ### **📄 CV en Español:**
+
 - **Archivo:** `index.html`
 - **PDF:** `CV_Diego_Cruz.pdf`
 - **Script:** `npm run pdf`
 
 ### **📄 CV en Inglés:**
+
 - **Archivo:** `index-en.html`
 - **PDF:** `CV_Diego_Cruz_EN.pdf`
 - **Script:** `npm run pdf:en`
 
 ### **📄 Ambos PDFs:**
+
 - **Script:** `npm run pdf:all`
 
 ## 🎯 **Personalización**
