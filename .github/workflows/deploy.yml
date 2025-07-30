@@ -1,0 +1,62 @@
+name: Deploy CV to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies (if any)
+      run: |
+        if [ -f package.json ]; then
+          npm ci
+        fi
+        
+    - name: Build and deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
+        publish_branch: gh-pages
+        force_orphan: true
+        
+    - name: Create PDF version
+      uses: docker://puppeteer/puppeteer:latest
+      with:
+        args: |
+          node -e "
+          const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+            await page.goto('file:///github/workspace/index.html', {waitUntil: 'networkidle0'});
+            await page.pdf({
+              path: 'CV_Diego_Cruz.pdf',
+              format: 'A4',
+              margin: {top: '1cm', right: '1cm', bottom: '1cm', left: '1cm'},
+              printBackground: true
+            });
+            await browser.close();
+          })();
+          "
+          
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: cv-pdf
+        path: CV_Diego_Cruz.pdf 

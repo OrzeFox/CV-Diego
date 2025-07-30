@@ -1,0 +1,40 @@
+{
+  "name": "cv-diego-cruz",
+  "version": "1.0.0",
+  "description": "CV profesional de Diego Cruz - Desarrollador Mobile & Full Stack",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'CV is ready for deployment'",
+    "deploy": "echo 'Deploying to GitHub Pages...'",
+    "pdf": "node scripts/generate-pdf.js",
+    "lint": "echo 'Linting HTML and CSS...'",
+    "test": "echo 'Testing CV accessibility...'"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "portfolio",
+    "react-native",
+    "fullstack",
+    "developer",
+    "barcelona"
+  ],
+  "author": "Diego Cruz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OrzeFox/cv-diego-cruz.git"
+  },
+  "homepage": "https://orzeFox.github.io/cv-diego-cruz",
+  "bugs": {
+    "url": "https://github.com/OrzeFox/cv-diego-cruz/issues"
+  },
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 
