@@ -47,12 +47,10 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Generate PDFs
-        run: |
-          pnpm run pdf
-          pnpm run pdf:en
+        run: pnpm run pdf:all
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

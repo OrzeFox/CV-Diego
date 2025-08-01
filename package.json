@@ -10,7 +10,7 @@
     "deploy": "echo 'Deploying to GitHub Pages...'",
     "pdf": "node scripts/generate-pdf.js",
     "pdf:en": "node scripts/generate-pdf-en.js",
-    "pdf:all": "npm run pdf && npm run pdf:en",
+    "pdf:all": "pnpm run pdf && pnpm run pdf:en",
     "lint": "echo 'Linting HTML and CSS...'",
     "test": "echo 'Testing CV accessibility...'"
   },
